@@ -191,6 +191,10 @@ article {
 	max-width: 365px;
 }
 
+button:hover {
+	cursor: pointer;	
+}
+	
 @media screen and (max-width: 850px) {
 	main {
 		flex-direction: column;
