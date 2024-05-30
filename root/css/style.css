@@ -68,7 +68,7 @@ main {
 
 .masked {
 	width: 285px;
-	height: auto;
+	height: 280px;
 	background-image: url(../images/drawers.jpg);
 	background-position: left;
 	background-size: 285px 280px;
