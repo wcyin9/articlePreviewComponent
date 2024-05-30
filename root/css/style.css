@@ -1,0 +1,259 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+  	font-family: "Manrope", sans-serif;
+}
+
+h1 {
+	font-size: 20px;
+	line-height: 28px;
+	letter-spacing: 0.25px;
+	font-weight: 700;
+	color: #48556A;
+} 
+
+p {
+	font-size: 13px;
+	line-height: 20px;
+	letter-spacing: 0.12px;
+	font-weight: 500;
+	color: #6E8098;
+}
+
+.name {
+	font-weight: 700;
+	color: #48556A;
+}
+
+.date {
+	color: #9DAEC2;
+}
+
+.desc {
+	padding: 1.3em 0;
+}
+
+body {
+	background-color: #ECF2F8;
+	height: 100vh;
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	overflow: hidden;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 730px;
+	max-height: 280px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 40px 40px -10px rgba(201, 213, 225, 0.5);
+	
+	transition: all 0.4s ease-out;
+}
+
+/*
+.hero {
+	max-height: 280px;
+	border-radius: 10px 0 0 10px;
+	max-width: 285px;
+}
+*/
+
+.masked {
+	width: 285px;
+	height: 280px;
+	background-image: url(../images/drawers.jpg);
+	background-position: left;
+	background-size: 285px 280px;
+	background-repeat: no-repeat;
+	border-radius: 10px 0 0 10px;
+}
+
+.profilePic {
+	max-width: 40px;
+	border-radius: 50%;
+	margin-right: 16px;
+}
+
+section, .author, .infoCont {
+	display: flex;
+	align-items: center;
+}
+
+.author {
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+section {
+	width: 100%;
+	justify-content: space-between;
+}
+
+.share {
+	max-width: 15px;
+	max-height: 13px;
+	position: relative;
+	z-index: 2;
+	margin-right: 6px;
+	transition: all 0.3s ease-out;
+}
+
+button {
+	position: relative;
+	border: none;
+}
+
+.share.active {
+	transition: all 0.3s ease-out;
+	filter: brightness(0) saturate(100%) invert(100%) sepia(10%) saturate(2%) hue-rotate(153deg) brightness(110%) contrast(100%);
+}
+
+button.active::after {
+	background-color: #6E8098;
+	transition: all 0.3s ease-out;
+}
+
+button::after {
+	content: '';
+	display: block;
+	position: absolute;
+	background-color: #ECF2F8;
+	height: 32px;
+	width: 32px;
+	top: -6.3px;
+	right: -2.2px;
+	border-radius: 50%;
+	z-index: 1;
+	transition: all 0.3s ease-out;
+}
+
+.shareMenu {
+	position: absolute;
+	background-color: #48556A;
+	width: 248px;
+	height: 55px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 10px;
+	padding: 0 30px;
+	
+	top: -76px;
+	right: -108px;
+	
+	box-shadow: 0 10px 10px rgba(201, 213, 225, 0.5);
+
+	visibility: hidden;
+}
+
+.shareMenu.active {
+	visibility: visible;
+}
+
+.infoCont {position: relative;}
+
+.shareMenu img {
+	width: 20px;
+	height: auto;
+}
+
+.shareMenu p {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 5px;
+	color: #9DAEC2;
+}
+
+.shareMenu:after {
+	content:"";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 12px solid #48556A;
+	top: 55px;
+	box-shadow: 0 10px 10px rgba(201, 213, 225, 0.5);
+}
+
+article {
+	margin: 2em 2.3em;
+	max-width: 365px;
+}
+
+@media screen and (max-width: 850px) {
+	main {
+		flex-direction: column;
+		max-height: 512px;
+		max-width: 327px;
+		
+		transition: all 0.4s ease-out;
+	}
+	
+	.masked {
+		width: 100%;
+		max-height: 200px;
+		border-radius: 10px 10px 0 0;
+		padding: 0;
+		background-size: cover;
+		
+	}
+	
+	article {
+		margin: 30px 30px 10px;
+		max-width: 263px;
+	}
+	h1 {
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: 0.2px;
+		max-width: 263px;
+	}
+	
+	.desc {
+		max-width: 263px;
+		padding: 10px 0 30px;
+	}
+	
+	p {
+		font-size: 13px;
+		line-height: 20px;
+		letter-spacing: 0.12px;
+	}
+	
+	.shareMenu {
+		top: -14px;
+		left: -86px;
+		box-shadow: none;
+		height: 64px;
+		width: 323px;
+		justify-content: flex-start;
+		padding: 0 30px;
+		border-radius: 0 0 10px 10px;
+		
+		visibility: hidden;
+	}
+	
+	.shareMenu:after {
+		display: none;
+	}
+	
+	.shareMenu p, .shareMenu img {
+		margin-right: 15px;
+	}
+	
+	button::after {
+		top: -7px;
+		right: -2px;
+	}
+}
